@@ -6,8 +6,8 @@
 --1. Windows Auth - localdb admini õigused
 --2. SQL Server Auth - kontrollida varem tehtud kasutajad
 
-CREATE DATABASE merkulovaLOGITpv23;
-USE merkulovaLOGITpv23;
+CREATE DATABASE postnikovaLOGITpv23;
+USE postnikovaLOGITpv23;
 
 --tabeli loomine
 --identity(1,1) - ise täidab tabeli 1,2,3,...
