@@ -10,9 +10,9 @@ CREATE DATABASE postnikovaLOGITpv23;
 USE postnikovaLOGITpv23;
 
 --tabeli loomine
---identity(1,1) - ise täidab tabeli 1,2,3,...
+--AUTO_INCREMENT - ise täidab tabeli 1,2,3,...
 CREATE TABLE inimene(
-inimeneID int Primary Key identity(1,1),
+inimeneID int Primary Key AUTO_INCREMENT,
 nimi varchar(50) unique,
 synniaeg date,
 telefon char(12),
@@ -51,7 +51,7 @@ WHERE inimeneID=3;
 SELECT * FROM inimene;
 --table elukoht
 CREATE TABLE elukoht(
-elukohtID int PRIMARY KEY identity(1,1),
+elukohtID int PRIMARY KEY AUTO_INCREMENT,
 elukoht varchar(50) UNIQUE,
 maakond varchar(50)
 );
@@ -95,11 +95,11 @@ ON i.elukohtID=e.elukohtID;
 
 --Tabel auto loomine
 CREATE TABLE autod(
-autoID int Primary Key identity(1,1),
+autoID int Primary Key AUTO_INCREMENT,
 autoNr varchar(50) unique,
 mudell char(12),
 mark varchar(50),
-v_aasta int,
+v_aasta int
 );
 SELECT * FROM autod;
 
@@ -125,3 +125,26 @@ INSERT INTO inimene
 (nimi, synniaeg, telefon, pikkus, opilaskodu, elukohtID, autoID)
 VALUES
 ('Julia Post', '2021-12-30', '2568952', 90.5, 0, 1, 1);
+
+
+CREATE TABLE loom(
+loomID int Primary Key AUTO_INCREMENT,
+nimi varchar(50) unique,
+kaal decimal(3,2)
+);
+
+SELECT * FROM loom;
+
+INSERT INTO loom
+(nimi, kaal)
+VALUES
+('koer', '7.6'),
+('kass', '5.4')
+;
+
+ALTER TABLE inimene ADD loomID int;
+
+ALTER TABLE inimene
+ADD Constraint fk_loom
+FOREIGN KEY (loomID)
+references loom(loomID);
