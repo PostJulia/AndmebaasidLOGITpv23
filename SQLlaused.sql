@@ -1,13 +1,13 @@
 --kommentaar
---SQL SERVER Managment Stuuudio
+--SQL SERVER Managment Stuudio
 --Conect TO:
---Server Name: (localdb)\mssqllocaldb
---Authentification 2 tüüpi:
+--Server Name:  (localdb)\mssqllocaldb
+-- Authentification 2 tüüpi:
 --1. Windows Auth - localdb admini õigused
 --2. SQL Server Auth - kontrollida varem tehtud kasutajad
 
-CREATE DATABASE postnikovaLOGITpv23;
-USE postnikovaLOGITpv23;
+CREATE DATABASE merkulovaLOGITpv23;
+USE merkulovaLOGITpv23;
 
 --tabeli loomine
 --identity(1,1) - ise täidab tabeli 1,2,3,...
@@ -23,18 +23,25 @@ SELECT * FROM inimene;
 
 --tabeli kustutamine
 DROP table inimene;
+SELECT * FROM inimene;
+
+--tabeli kustutamine
+DROP table inimene;
 
 --andmete lisamine
 --DDL - data definition language
---DML - data manipulation language
+--DML -data manipulation language
 
 INSERT INTO inimene
 (nimi, synniaeg, telefon, pikkus, opilaskodu)
 VALUES
-('Mati Kaskk', '2021-12-30', '2568952', 140.0, 0),
-('Kaarel Oja', '2000-12-30', '2568952', 90.5, 0)
+('Peeter Uus', '2021-12-30', '2568952', 90.5, 0),
+('Kaarel Oja', '2000-12-30', '2568952', 90.5, 0),
+('Kask Mati', '1983-12-30', '33333', 140.5, 0),
+('Peeter Oja', '2021-12-30', '333333', 190.5, 0)
 ;
-SELECT * FROM inimene;
 
+SELECT * FROM inimene;
+--kustuta id=3
 DELETE FROM inimene
 WHERE inimeneID=3;
