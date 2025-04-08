@@ -23,10 +23,6 @@ SELECT * FROM inimene;
 
 --tabeli kustutamine
 DROP table inimene;
-SELECT * FROM inimene;
-
---tabeli kustutamine
-DROP table inimene;
 
 --andmete lisamine
 --DDL - data definition language
