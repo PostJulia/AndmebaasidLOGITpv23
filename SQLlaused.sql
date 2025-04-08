@@ -99,7 +99,7 @@ autoID int Primary Key identity(1,1),
 autoNr varchar(50) unique,
 mudell char(12),
 mark varchar(50),
-v_aasta int,
+v_aasta int
 );
 SELECT * FROM autod;
 
